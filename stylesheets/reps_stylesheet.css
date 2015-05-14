@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Antic+Slab);
 .cover {
     visibility: hidden;
 }
@@ -10,10 +9,14 @@ html, body {
 
 body {
     background-color: white;
-    font-family: arial,sans-serif;
-    min-width: 1000px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    font-family: 'Open Sans',arial,sans-serif;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+img {
+    max-width: 100%;
 }
 
 .c4mblue { color: #399fd3; }
@@ -69,7 +72,7 @@ body {
     min-height:600px;
     background-color:#fff;
     color:#eee;
-    overflow:hidden;
+    overflow-x:hidden;
     text-align: center;
 }
 
@@ -160,4 +163,34 @@ select:hover {
     font-size: 16px;
     font-family: 'Open Sans',sans-serif;
     line-height: 1.428571429;
+}
+
+.find {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 120%;
+    font-style: italic;
+    color: #999;
+}
+
+/***************************
+ Overwrie Bootstrap Defaults
+ ***************************/
+
+ .row {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+ }
+
+ .form-group {
+    width: 290px;
+    margin: 10px auto;
+ }
+
+ #searchButton {
+    margin-top: 10px;
+ }
+
+.main-part {
+    margin-top: 75px;
 }
