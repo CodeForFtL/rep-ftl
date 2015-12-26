@@ -4,7 +4,7 @@ repFortLauderdale
 =================
 repFortLauderdale is a web application designed to allow Broward county users to find information on their elected officials. Users can search for their representatives via address or geolocation and get back their name and contact information.
 
-If you'd like more project information, check out [Code For Fort Lauderdale](http://codeforftl.org/) or e-mail [rob at codeforftl.org](mailto:rob@codeforftl.org).
+If you'd like more project information, check out [Code For Fort Lauderdale](http://codeforftl.org/) or e-mail [rob at codeforftl.org](mailto:rob@codeforftl.org). You can take a look at it [here](http://codeforftl.org/rep-ftl/).
 
 What we're working on now
 -------------------------
