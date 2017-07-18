@@ -1,6 +1,12 @@
-<header class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
   <div class="container">
     <a class="navbar-brand" href="./">Home</a>
+
+    <button type="button"
+            class="navbar-toggler navbar-toggler-right"
+            (click)="isCollapsed = !isCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="navbar-collapse collapse" [bsCollapse]="isCollapsed">
       <ul class="navbar-nav">
@@ -21,11 +27,8 @@
         </li>
       </ul>
     </div>
-
-    <button type="button"
-            class="navbar-toggler navbar-toggler-right"
-            (click)="isCollapsed = !isCollapsed">
-      <span class="navbar-toggler-icon"></span>
-    </button>
   </div>
-</header>
+</nav>
+
+<router-outlet></router-outlet>
+

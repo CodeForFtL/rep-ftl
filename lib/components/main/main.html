@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 main-part">
+      <img alt="repFortLauderdale" src="images/repfortlauderdale.png">
+      <p class="lead">The source for all your Broward voter needs.</p>
+      <p class="find">Find your local representatives now:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form-inline">
+        <div class="form-group" style="width:290px;">
+          <label class="sr-only" for="inputAddress">Street Address</label>
+          <input type="text" class="form-control form-font" id="inputAddress" [(ngModel)]="address"
+                 placeholder="Enter street address">
+        </div>
+        <div class="form-group" style="width:240px;">
+          <label class="sr-only" for="dropdownCity">City</label>
+          <select class="form-control form-font" id="dropdownCity" [(ngModel)]="city">
+            <option value="Coconut Creek">Coconut Creek</option>
+            <option value="Cooper City">Cooper City</option>
+            <option value="Coral Springs">Coral Springs</option>
+            <option value="Dania Beach">Dania Beach</option>
+            <option value="Davie">Davie</option>
+            <option value="Deerfield Beach">Deerfield Beach</option>
+            <option value="Fort Lauderdale">Fort Lauderdale</option>
+            <option value="Hallandale Beach">Hallandale Beach</option>
+            <option value="Hillsboro Beach">Hillsboro Beach</option>
+            <option value="Hollywood">Hollywood</option>
+            <option value="Lauderdale-by-the-Sea">Lauderdale-by-the-Sea</option>
+            <option value="Lauderdale Lakes">Lauderdale Lakes</option>
+            <option value="Lauderhill">Lauderhill</option>
+            <option value="Lazy Lake">Lazy Lake</option>
+            <option value="Lighthouse Point">Lighthouse Point</option>
+            <option value="Margate">Margate</option>
+            <option value="Miramar">Miramar</option>
+            <option value="North Lauderdale">North Lauderdale</option>
+            <option value="Oakland Park">Oakland Park</option>
+            <option value="Parkland">Parkland</option>
+            <option value="Pembroke Park">Pembroke Park</option>
+            <option value="Pembroke Pines">Pembroke Pines</option>
+            <option value="Plantation">Plantation</option>
+            <option value="Pompano Beach">Pompano Beach</option>
+            <option value="Sea Ranch Lakes">Sea Ranch Lakes</option>
+            <option value="Southwest Ranches">Southwest Ranches</option>
+            <option value="Sunrise">Sunrise</option>
+            <option value="Tamarac">Tamarac</option>
+            <option value="West Park">West Park</option>
+            <option value="Weston">Weston</option>
+            <option value="Wilton Manors">Wilton Manors</option>
+          </select>
+        </div>
+        <button type='button' name="searchButton" id="searchButton" class="btn btn-primary1 form-font"
+                (click)="handleSearch()"><span class="fa fa-search"></span></button>
+        <p class="lead">or</p>
+        <button type='button' name="locateButton" class="btn btn-primary1 form-font" (click)="geolocateUser()">Use
+          current location <span class="fa fa-map-marker"></span></button>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<section>
+  <div class="container">
+    <p class="text-muted text-center"> &copy; Code For Ft. Lauderdale</p>
+  </div>
+</section>
+<div id="locationInput"></div>
