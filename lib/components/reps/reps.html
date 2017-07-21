@@ -1,0 +1,82 @@
+<div class="container"> <!-- dataContainer class had to be removed in order to show error message -->
+    <!--<input type="hidden" id="inputAddress" name="inputAddress" value="">-->
+    <div class ="page-header1">Location<div class ="header-small">
+        <div id ="locationBlock"></div>
+        <div id ="sectionDiv"></div>
+    </div>
+    </div>
+</div>
+
+<div class="container dataContainer" id="checkboxes">
+    <div class="panel-group">
+        <div class="row">
+            <div class="col-sm-5 col-push-5">
+                <div class ="header-small">What's important to you?</div>
+                <h5>(Optional. Choose one.)</h5>
+            </div>
+            <div class="col-sm-5 col-push-5">
+                <div class="form-group" id="issueForm">
+                    <select class="form-control" id="sel1" onchange="updateIssue(this)">
+                        <option>None</option>
+                        <option class="FedAndState">Courts</option>
+                        <option class="Fed">Defense / War</option>
+                        <option class="State">Driver's Licenses</option>
+                        <option class="County">Education</option>
+                        <option class="State">Elections</option>
+                        <option class="County">Fire</option>
+                        <option class="Fed">Foreign Diplomacy</option>
+                        <option class="Fed">Foreign Trade</option>
+                        <option class="FedAndState">Highways / Transportation</option>
+                        <option class="County">Human Services</option>
+                        <option class="County">Parks and Recreation</option>
+                        <option class="County">Police</option>
+                        <option class="Fed">Post Office</option>
+                        <option class="County">Public Works (Sewers, Solid Waste, Stormwater, etc.)</option>
+                        <option class="State">Public Heath And Safety</option>
+                        <option class="State">Single-State Commerce</option>
+                        <option class="State">State Constitution (ex. legal drinking or smoking age)</option>
+                        <option class="County">Urban Planning / Zoning</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container dataContainer">
+    <div class="panel-group" id="accordion">
+        <div class="rep-panel " id="federalSection">
+            <div class="rep-panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#Federal_Reps">
+                    Federal <span class="caret"></span></a></div>
+            <div id="Federal_Reps" class="panel-collapse collapse in">
+                <ul id="federal" class="rep-list-group"></ul></div>
+        </div>
+
+        <div class="rep-panel " id="stateSection">
+            <!-- Default rep-panel contents -->
+            <div class="rep-panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#State_Reps">
+                    State <span class="caret"></span></a></div>
+            <div id="State_Reps" class="panel-collapse collapse">
+                <ul id ="state" class="rep-list-group"></ul></div>
+        </div>
+
+        <div class="rep-panel " id="countySection">
+            <!-- Default rep-panel contents -->
+            <div class="rep-panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#County_Reps">
+                    County <span class="caret"></span></a></div>
+            <div id="County_Reps" class="panel-collapse collapse">
+                <ul id="county" class="rep-list-group">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <section>
+        <div class="container">
+            <p class="text-muted text-center"> &copy; Code For Ft Lauderdale</p>
+        </div>
+    </section>
+</div> <!-- /container -->
