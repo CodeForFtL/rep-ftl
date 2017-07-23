@@ -21,7 +21,7 @@ handler(Request request) {
 
   // redirects all files to default `pub serve` path
   var handler = proxyHandler('http://localhost:8080');
-  if (new RegExp(r'\.(css|dart|html|png|ttf|otf|TTF|js)$').hasMatch(request.url.path)) {
+  if (new RegExp(r'\.(css|dart|html|png|ttf|otf|TTF|woff2|js)$').hasMatch(request.url.path)) {
 //    print('proxyiing to: http://localhost:8080');
     return handler(request);
   }
@@ -44,4 +44,5 @@ _startPubServe() async {
   String executable = Platform.isWindows ? 'pub.bat' : 'pub';
   var process = await Process.start(executable, ['serve', '--port', '8080']);
   process.stdout.transform(UTF8.decoder).listen(print);
+  process.stderr.transform(UTF8.decoder).listen(print);
 }
