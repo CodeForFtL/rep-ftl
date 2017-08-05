@@ -3,14 +3,20 @@ import 'dart:html';
 import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart';
 import 'package:google_maps/google_maps.dart';
+import 'package:ng_bootstrap/ng_bootstrap.dart';
 
 
 @Component(selector: 'rep-ftl-main',
-    templateUrl: 'main.html')
+    templateUrl: 'main.html',
+  directives: const [BS_DIRECTIVES])
 class MainComponent {
   String address;
   String city = 'Coconut Creek';
   Router _router;
+  bool showErrorModal = false;
+
+  @ViewChild('errorModal')
+  BsModalComponent errorModal;
 
   MainComponent(this._router);
 
@@ -46,12 +52,13 @@ class MainComponent {
 
   /// Make request to Google Maps Geocoder API
   geoLocateUser() async {
-    if (window.navigator.geolocation != null) {
+    try {
       var position = await window.navigator.geolocation.getCurrentPosition();
       var pos = new LatLng(position.coords.latitude, position.coords.longitude);
       _writeAddressName(pos); //comment this line to stop the page from reload when debugging
-    } else {
-      window.alert('Error: The Geolocation service failed.');
+
+    } catch (e) {
+      errorModal.show();
     }
   }
 }
