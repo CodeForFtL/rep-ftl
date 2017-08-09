@@ -1,0 +1,85 @@
+<div class="container"> <!-- dataContainer class had to be removed in order to show error message -->
+    <div class="page-header1">Location
+        <div class="header-small">
+            <div id="locationBlock">
+                <div class="alert alert-danger" *ngIf="isBadAddress">
+                    Sorry, we were unable to locate any information for the address entered.
+                    <a [routerLink]="['Main']" class="alert-link"><br>Try again?</a>
+                </div>
+                <strong>{{normalizedAddress}}</strong></div>
+            <div id="sectionDiv">
+                <p *ngFor="let d of divisions">{{d.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="checkboxes">
+    <div class="panel-group">
+        <div class="row">
+            <div class="col-sm-5 col-push-5">
+                <div class="header-small">What's important to you?</div>
+                <h5>(Optional. Choose one.)</h5>
+            </div>
+            <div class="col-sm-5 col-push-5">
+                <div class="form-group" id="issueForm">
+                    <select class="form-control" id="issue-sb" [(ngModel)]="issueType">
+                        <option value="FedAndState">Courts</option>
+                        <option value="Fed">Defense / War</option>
+                        <option value="State">Driver's Licenses</option>
+                        <option value="County">Education</option>
+                        <option value="State">Elections</option>
+                        <option value="County">Fire</option>
+                        <option value="Fed">Foreign Diplomacy</option>
+                        <option value="Fed">Foreign Trade</option>
+                        <option value="FedAndState">Highways / Transportation</option>
+                        <option value="County">Human Services</option>
+                        <option value="County">Parks and Recreation</option>
+                        <option value="County">Police</option>
+                        <option value="Fed">Post Office</option>
+                        <option value="County">Public Works (Sewers, Solid Waste, Stormwater, etc.)</option>
+                        <option value="State">Public Heath And Safety</option>
+                        <option value="State">Single-State Commerce</option>
+                        <option value="State">State Constitution (ex. legal drinking or smoking age)</option>
+                        <option value="County">Urban Planning / Zoning</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <bs-accordion class="panel-group">
+        <bs-accordion-panel heading="Federal" *ngIf="issueType == 'County' || issueType == 'State'">
+            <ul class="rep-list-group">
+                <li *ngFor="let representative of countryRepresentatives" class="rep-list-group-item">
+                    <reps-ftl-rep-detail [representative]="representative"></reps-ftl-rep-detail>
+                </li>
+            </ul>
+        </bs-accordion-panel>
+
+        <bs-accordion-panel heading="State" *ngIf="issueType == 'County' || issueType == 'Fed'">
+            <ul class="rep-list-group">
+                <li *ngFor="let representative of stateRepresentatives" class="rep-list-group-item">
+                    <reps-ftl-rep-detail [representative]="representative"></reps-ftl-rep-detail>
+                </li>
+            </ul>
+        </bs-accordion-panel>
+
+        <bs-accordion-panel heading="County"
+                            *ngIf="issueType == 'Fed' || issueType == 'State' || issueType == 'FedAndState'">
+            <ul class="rep-list-group">
+                <li *ngFor="let representative of otherRepresentatives" class="rep-list-group-item">
+                    <reps-ftl-rep-detail [representative]="representative"></reps-ftl-rep-detail>
+                </li>
+            </ul>
+        </bs-accordion-panel>
+    </bs-accordion>
+    <hr>
+    <section>
+        <div class="container">
+            <p class="text-muted text-center"> &copy; Code For Ft Lauderdale</p>
+        </div>
+    </section>
+</div> <!-- /container -->

@@ -1,0 +1,9 @@
+<span *ngIf="photoUrl == null" class="rep-icon glyphicon glyphicon-user"></span>
+<img *ngIf="photoUrl != null" alt="rep_photo" class="rep-img" [src]="photoUrl">
+<div class="contact-info">
+    <strong>{{name}}</strong><br>
+    {{party}}<br *ngIf="party != null && party != ''">
+    {{officeName}}<br *ngIf="officeName != null && officeName != ''">
+    <abbr title="Phone" *ngIf="phone != null && phone != ''">{{phone}}</abbr>
+    <a [href]="site" *ngIf="phone != null && phone != ''">{{site}}</a>
+</div>
